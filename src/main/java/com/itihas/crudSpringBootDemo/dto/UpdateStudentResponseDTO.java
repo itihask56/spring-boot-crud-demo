@@ -1,27 +1,17 @@
-package com.itihas.crudSpringBootDemo.entity;
-
-import jakarta.persistence.*;
+package com.itihas.crudSpringBootDemo.dto;
 
 import java.time.LocalDateTime;
 
-@Entity
-public class Student {
+public class UpdateStudentResponseDTO {
 
-
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
     private String name;
     private int age;
     private String email;
-
     private int rollNo;
     private String subject;
-    private Boolean deleted;
-    @Column(unique = true, nullable = false)
     private String mobileNumber;
-    private LocalDateTime createdAt;
+    private String message;
     private LocalDateTime updatedAt;
 
     public Long getId() {
@@ -31,13 +21,6 @@ public class Student {
     public void setId(Long id) {
         this.id = id;
     }
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public String getName() {
         return name;
@@ -45,6 +28,14 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getEmail() {
@@ -59,8 +50,8 @@ public class Student {
         return rollNo;
     }
 
-    public void setRollNo(int roll_no) {
-        this.rollNo = roll_no;
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
     }
 
     public String getSubject() {
@@ -71,28 +62,20 @@ public class Student {
         this.subject = subject;
     }
 
-    public Boolean getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(Boolean deleted) {
-        this.deleted = deleted;
-    }
-
     public String getMobileNumber() {
         return mobileNumber;
     }
 
-    public void setMobileNumber(String mobile_number) {
-        this.mobileNumber = mobile_number;
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public String getMessage() {
+        return message;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public LocalDateTime getUpdatedAt() {
