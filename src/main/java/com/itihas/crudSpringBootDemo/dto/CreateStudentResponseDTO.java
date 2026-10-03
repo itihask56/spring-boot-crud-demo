@@ -1,26 +1,16 @@
-package com.itihas.crudSpringBootDemo.entity;
-
-import jakarta.persistence.*;
+package com.itihas.crudSpringBootDemo.dto;
 
 import java.time.LocalDateTime;
 
-@Entity
-public class Student {
-
-
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CreateStudentResponseDTO {
     private  Long id;
     private String name;
     private int age;
     private String email;
-
     private int rollNo;
     private String subject;
-    private Boolean deleted;
-    @Column(unique = true, nullable = false)
     private String mobileNumber;
+    private String message;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -31,13 +21,6 @@ public class Student {
     public void setId(Long id) {
         this.id = id;
     }
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public String getName() {
         return name;
@@ -47,20 +30,20 @@ public class Student {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getMessage() {
+        return message;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public int getRollNo() {
-        return rollNo;
+    public String getMobileNumber() {
+        return mobileNumber;
     }
 
-    public void setRollNo(int roll_no) {
-        this.rollNo = roll_no;
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
 
     public String getSubject() {
@@ -71,20 +54,28 @@ public class Student {
         this.subject = subject;
     }
 
-    public Boolean getDeleted() {
-        return deleted;
+    public int getRollNo() {
+        return rollNo;
     }
 
-    public void setDeleted(Boolean deleted) {
-        this.deleted = deleted;
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
     }
 
-    public String getMobileNumber() {
-        return mobileNumber;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMobileNumber(String mobile_number) {
-        this.mobileNumber = mobile_number;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -102,4 +93,7 @@ public class Student {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+
+
 }
