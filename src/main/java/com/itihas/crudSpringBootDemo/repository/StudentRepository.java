@@ -12,5 +12,6 @@ public interface StudentRepository extends JpaRepository<Student,Long> {
     Optional<Student> findByIdAndDeletedIsFalse(Long id);
     List<Student> findByDeletedIsFalse();
     Optional<Student> findByMobileNumberAndDeletedFalse(String mobileNumber);
+    Boolean existsByMobileNumber(String mobileNumber);
 
 }
